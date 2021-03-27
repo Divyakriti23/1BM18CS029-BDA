@@ -45,10 +45,10 @@ cqlsh:employee> select * from employee_info;
 
  emp_id | dept_name     | designation | doj                             | emp_name | salary
 --------+---------------+-------------+---------------------------------+----------+------------
-      1 |     Corporate |         CEO | 2001-05-04 18:30:00.000000+0000 |   Divya | 2.1221e+05
-      2 |      Software |     Manager | 2002-05-04 18:30:00.000000+0000 |    Manu |      52242
-      4 | Cyber Security|      Lawyer | 2003-06-04 18:30:00.000000+0000 |   Anant |        242
-      3 | Miscellaneous |   Architect | 2003-05-04 18:30:00.000000+0000 |    Tanu |      75242
+      1 |     Corporate |         CEO | 2001-05-04 18:30:00.000000+0000 |   Divya  | 2.1221e+05
+      2 |      Software |     Manager | 2002-05-04 18:30:00.000000+0000 |    Manu  |      52242
+      4 | Cyber Security|      Lawyer | 2003-06-04 18:30:00.000000+0000 |   Anant  |        242
+      3 | Miscellaneous |   Architect | 2003-05-04 18:30:00.000000+0000 |    Tanu  |      75242
 
 (4 rows)
 cqlsh:employee> begin batch insert into employee_info(emp_id, emp_name, designation, doj, salary, dept_name) values (121, 'John', 'CTO', '2000-05-05', 3212212, 'Corporate'); apply batch;
@@ -82,11 +82,11 @@ cqlsh:employee> select * from employee_info;
 
  emp_id | dept_name     | designation | doj                             | emp_name | projects          | salary
 --------+---------------+-------------+---------------------------------+----------+-------------------+------------
-      1 |     Corporate |         CEO | 2001-05-04 18:30:00.000000+0000 |   Divya | {'Start', 'Test'} | 2.1221e+05
-      2 |      Software |     Manager | 2002-05-04 18:30:00.000000+0000 |    Manu | {'Start', 'Test'} |      52242
+      1 |     Corporate |         CEO | 2001-05-04 18:30:00.000000+0000 |   Divya  | {'Start', 'Test'} | 2.1221e+05
+      2 |      Software |     Manager | 2002-05-04 18:30:00.000000+0000 |    Manu  | {'Start', 'Test'} |      52242
       4 | Cyber Security|       Lawyer| 2003-06-04 18:30:00.000000+0000 |    Anant | {'Start', 'Test'} |        242
     121 |      Software |         CTO | 2000-05-04 18:30:00.000000+0000 |     Jack | {'Start', 'Test'} | 3.2122e+06
-      3 |  Miscellaneous|   Architect | 2003-05-04 18:30:00.000000+0000 |    Tanu | {'Start', 'Test'} |      75242
+      3 |  Miscellaneous|   Architect | 2003-05-04 18:30:00.000000+0000 |    Tanu  | {'Start', 'Test'} |      75242
 
 (5 rows)
 cqlsh:employee> begin batch insert into employee_info(emp_id, emp_name, designation, doj, salary, dept_name) values (121, 'Boris', 'MTO', '2001-08-05', 12212, 'Corporate') using ttl 120; apply batch;
